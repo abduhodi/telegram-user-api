@@ -26,6 +26,10 @@ export class UpdateService {
             {
                 command: '/add',
                 description: "Guruhga user qo'shish"
+            },
+            {
+                command: '/group',
+                description: "Yangi guruh yaratish"
             }
         ]);
 
@@ -44,6 +48,13 @@ export class UpdateService {
     async addScene(@Ctx() ctx: SceneContext) {
 
         await ctx.scene.enter('add');
+
+    }
+
+    @Command('group')
+    async groupScene(@Ctx() ctx: SceneContext) {
+
+        await ctx.scene.enter('group');
 
     }
 
